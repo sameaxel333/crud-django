@@ -1,0 +1,11 @@
+{% extends 'items/base.html' %}
+{% block title %}Delete School{% endblock %}
+{% block content %}
+<h1>Delete School</h1>
+<p>Are you sure you want to delete "{{ object }}"? This will also delete its students.</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn" type="submit">Yes, delete</button>
+    <a href="{% url 'school-list' %}">Cancel</a>
+</form>
+{% endblock %}

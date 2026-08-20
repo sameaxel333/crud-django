@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}School CRUD{% endblock %}</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f8f8f8;
+            color: #333;
+        }
+        nav {
+            background: #0c4b33;
+            padding: 16px 24px;
+            margin-bottom: 24px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        nav a:hover { color: #79aec8; }
+        h1 { color: #0c4b33; }
+        .content { padding: 0 24px 24px; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #0c4b33;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+        }
+        tr:hover td { background: #f1f8f4; }
+        .actions a { margin-right: 12px; color: #447e9b; text-decoration: none; }
+        .actions a:hover { text-decoration: underline; }
+        form p { margin: 12px 0; }
+        form input, form select { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+        .btn {
+            padding: 8px 16px;
+            background: #0c4b33;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: #145c3f; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'school-list' %}">Schools</a>
+        <a href="{% url 'student-list' %}">Students</a>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
